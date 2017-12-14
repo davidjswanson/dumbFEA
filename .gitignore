@@ -1,24 +1,35 @@
-# Prerequisites
-*.d
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Build
+*_build
+build
+
+# VIM
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
 
 # Compiled Object files
 *.slo
 *.lo
 *.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
+#*.obj
 
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
@@ -30,3 +41,18 @@
 *.exe
 *.out
 *.app
+
+# Other
+log.txt
+output.txt
+Icon?
+
+# Local files
+*-local.*
+*-local
+*_local
+Data
+dependencies
+#*.mtl
+install
+.DS_Store
