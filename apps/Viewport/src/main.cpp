@@ -12,7 +12,8 @@
 
 class TestApp : public nanogui::Screen {
 public:
-	TestApp() : nanogui::Screen(Eigen::Vector2i(1024, 768), "Test App"), r(0), g(0), b(0), a(1) {
+	TestApp() : nanogui::Screen(Eigen::Vector2i(1440, 768), "Test App"), r(0), g(0), b(0), a(1) {
+		
 		using namespace nanogui;
 		Window* window = new Window(this);
 		window->setTitle("Window");
@@ -25,11 +26,30 @@ public:
 		addVariableSlider(panel, r, "Red");
 		addVariableSlider(panel, g, "Green");
 		addVariableSlider(panel, b, "Blue");
+		Button* button = new Button(window);
+		button->setCaption("Hi.");
+	
+
+
+
 	}
 
 	void drawContents() {
-		glClearColor(r,g,b,1);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		//glClearColor(r,g,b,.5);
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+		NVGcontext* vg = nvgContext();
+
+		nvgBeginPath(vg);
+		nvgRect(vg, 100, 200, 800, 30);
+		nvgFillColor(vg, nvgRGBA(r*256, g * 256, b * 256, 128));
+		nvgFill(vg);
+
+	}
+
+	bool mouseButtonEvent(const nanogui::Vector2i& p, int button, bool down, int modifiers) {
+		std::cout << "clicked" << std::endl;
+		return true;
 	}
 
 private:
