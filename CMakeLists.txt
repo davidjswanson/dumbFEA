@@ -15,4 +15,10 @@ endif()
 
 # -------------------------------- Project --------------------------------
 
+#add_subdirectory(${dependency_dir}/NanoGUI/src)
+
+#message(${NANOGUI_EXTRA_DEFS})
+#message(${NANOGUI_EXTRA_INCS})
+#message(${NANOGUI_EXTRA_LIBS})
+
 add_subdirectory(apps)
